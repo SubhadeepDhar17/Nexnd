@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../SCSS/JobDesc.scss";
 import { useCookies } from "react-cookie";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -25,11 +26,17 @@ export const PostRender = () => {
   }, []);
 
   return (
-    <div>
-      <h1>{post.company}</h1>
-      <div>{post.salary}</div>
-      <div>{post.jobLocation}</div>
-      <div>{post.ideas}</div>
+    <div className="job-container">
+      <div className="name-and-logo">
+        <h1 className="job-heading">{post.company}</h1>
+        <img src={post.logo} alt=""/>  
+      </div>
+      <div>Founder: {post.founders} || Website: {post.website} || Estd: {post.yearStarted}</div>
+      <div>Contact: {post.email}</div>
+      <div>Salary: {post.salary} || Equity: {post.equity} || Location: {post.jobLocation}</div>
+      <div>Amount Raised: {post.amountRaised}</div>
+      <div>Objective: {post.ideas}</div>
+      <div>Description: {post.jobDescription}</div>
     </div>
   );
 };

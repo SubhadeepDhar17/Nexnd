@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Martian+Mono&family=Mooli&family=Poppins&display=swap");
+/*font-family: 'Dela Gothic One', cursive;
+font-family: 'Martian Mono', monospace;
+font-family: 'Mooli', sans-serif;
+#ef629f, #5490e0*/
+
+.job-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    background-color: bisque;
+    border-radius: 1rem;
+    padding: 2rem;
+
+    .name-and-logo {
+        display: flex;
+        flex-direction: row;
+
+        .job-heading {
+            font-family: "Dela Gothic One", cursive;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #b6be9c;
+        }
+
+        img {
+            height: 4rem;
+            margin-left: 5rem;
+            border-radius: 2rem;
+        }
+    }
+
+    
+}
