@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../SCSS/JobDesc.scss";
 import { useCookies } from "react-cookie";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 
 export const PostRender = () => {
@@ -26,17 +26,25 @@ export const PostRender = () => {
   }, []);
 
   return (
-    <div className="job-container">
-      <div className="name-and-logo">
+    <div className="idea-container">
+      <div className="name-logo-founder-year">
         <h1 className="job-heading">{post.company}</h1>
-        <img src={post.logo} alt=""/>  
+        <img src={post.logo} alt=""/>
+        <div className="founder-and-year">
+            <div>Founders: {post.founders}</div>
+            <div>Year Started: {post.yearStarted}</div>
+        </div>
       </div>
-      <div>Founder: {post.founders} || Website: {post.website} || Estd: {post.yearStarted}</div>
-      <div>Contact: {post.email}</div>
-      <div>Salary: {post.salary} || Equity: {post.equity} || Location: {post.jobLocation}</div>
-      <div>Amount Raised: {post.amountRaised}</div>
-      <div>Objective: {post.ideas}</div>
-      <div>Description: {post.jobDescription}</div>
+      <div className="rest-of-idea">
+        <div className="amountRaised-website"> ${post.amountRaised} Raised || 
+          <Link to={`https://www.${post.website}`} target='_blank'> {post.website} </Link>|| 
+        </div>
+        <div>Contact: {post.email}</div>
+        <div>Salary: ${post.salary} || Equity: {post.equity}% || Location: {post.jobLocation}</div>
+        <div>Amount Raised: {post.amountRaised}</div>
+        <div>Objective: {post.ideas}</div>
+        <div>Description: {post.jobDescription}</div>
+      </div>
     </div>
   );
 };

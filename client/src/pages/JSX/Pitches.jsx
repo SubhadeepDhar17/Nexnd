@@ -29,7 +29,6 @@ export const Pitches = () => {
           <li key={pitchMap._id}>
             <br />
             <div className="pitch-container">
-              <Link to={`/jobdesc/${pitchMap._id}`}>Click</Link>
               <div className="top-part">
                 <div className="logo-company-site">
                   <div>
@@ -54,7 +53,6 @@ export const Pitches = () => {
                   <div>Year Started: {pitchMap.yearStarted}</div>
                 </div>
               </div>
-
               <div className="job-container">
                 <div>
                   <div>
@@ -62,12 +60,12 @@ export const Pitches = () => {
                     {pitchMap.equity}% equity
                   </div>
                   <div>
-                    {pitchMap.email} . Remote . {pitchMap.jobLocation}
+                    {pitchMap.email} . {pitchMap.jobLocation}
                   </div>
                 </div>
-
+                <Link to={`/jobdesc/${pitchMap._id}`}><button className="learn-more">More...</button></Link>
                 <a href={`mailto:${pitchMap.email}`}>
-                  <button>Apply</button>
+                  <button className="apply">Apply</button>
                 </a>
               </div>
             </div>
