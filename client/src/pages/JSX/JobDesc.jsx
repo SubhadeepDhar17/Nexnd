@@ -39,11 +39,10 @@ export const PostRender = () => {
         <div className="amountRaised-website"> ${post.amountRaised} Raised || 
           <Link to={`https://www.${post.website}`} target='_blank'> {post.website} </Link>|| 
         </div>
-        <div>Contact: {post.email}</div>
-        <div>Salary: ${post.salary} || Equity: {post.equity}% || Location: {post.jobLocation}</div>
-        <div>Amount Raised: {post.amountRaised}</div>
-        <div>Objective: {post.ideas}</div>
-        <div>Description: {post.jobDescription}</div>
+        <div><b className="idea-labels">Contact: </b> {post.email}</div>
+        <div><b className="idea-labels">HQ: </b> {post.jobLocation} </div>
+        <div><b className="idea-labels"> Position: </b> {post.ideas}</div>
+        <div><b className="idea-labels">Description - </b> <br /> {post.jobDescription}</div>
       </div>
     </div>
   );

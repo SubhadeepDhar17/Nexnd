@@ -13,7 +13,7 @@ export const Home = () => {
             <h3>A place where talent meets talent</h3>
             {/*  */}
             <Link to="/pitch-ideas">
-              <button>Post A Job</button>
+              <button>Post A Pitch</button>
             </Link>
             {/* </Link> */}
             <div className="arrow-down">🔽</div>

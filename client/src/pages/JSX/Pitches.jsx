@@ -37,7 +37,7 @@ export const Pitches = () => {
                   <div>
                     <h1>{pitchMap.company}</h1>
                     <Link
-                      to={`https://www.${pitchMap.website}`}
+                      to={`http://${pitchMap.website}`}
                       target="_blank"
                     >
                       {pitchMap.website}

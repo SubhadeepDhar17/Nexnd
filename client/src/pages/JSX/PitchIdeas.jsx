@@ -41,7 +41,7 @@ export const PitchIdeas = () => {
     try {
       await axios.post("http://localhost:5000/pitchIdeas", startUp, config);
       alert("Posted");
-      navigate("/");
+      navigate("/profile");
     } catch (e) {
       alert("Unexpected error");
     }
@@ -51,7 +51,7 @@ export const PitchIdeas = () => {
     <div>
       <h1 className="heading-pitch-ideas">Create Pitch</h1>
       <form className="pitch-idea-form" onSubmit={onSubmit}>
-        <label htmlFor="company">Company: </label>
+        <label htmlFor="company">Company: <sup>*</sup> </label>
         <input
           type="text"
           id="company"
@@ -64,7 +64,7 @@ export const PitchIdeas = () => {
           type="text"
           id="website"
           name="website"
-          required
+          placeholder="www.website.com"
           onChange={handleChange}
         />
         <label htmlFor="company">Logo: </label>
@@ -72,10 +72,10 @@ export const PitchIdeas = () => {
           type="text"
           id="logo"
           name="logo"
-          required
+          placeholder="logo link"
           onChange={handleChange}
         />
-        <label htmlFor="founders">Founders: </label>
+        <label htmlFor="founders">Founders: <sup>*</sup> </label>
         <input
           type="text"
           name="founders"
@@ -83,15 +83,16 @@ export const PitchIdeas = () => {
           required
           onChange={handleChange}
         />
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">Email: <sup>*</sup></label>
         <input
           type="email"
           name="email"
           id="email"
           required
+          placeholder="mydream@company.com"
           onChange={handleChange}
         />
-        <label htmlFor="jobDescription">Job Description: </label>
+        <label htmlFor="jobDescription">Pitch Description: <sup>*</sup></label>
         <textarea
           name="jobDescription"
           id="jobDescription"
@@ -99,9 +100,24 @@ export const PitchIdeas = () => {
           onChange={handleChange}
         />
         <p>Please do not use " , - / " in number fields</p>
-        <div className="two-fields">
-          <label htmlFor="yearStarted">Started (year): </label>
-          <label htmlFor="amountRaised">Amount Raised: ($)</label>
+        <label htmlFor="yearStarted">Started <sup>*</sup> (year): </label>
+        <input
+            type="number"
+            name="yearStarted"
+            id="yearStarted"
+            required
+            onChange={handleChange}
+        />
+        <label htmlFor="amountRaised">Amount Raised: <sup>*</sup> ($)</label>
+        <input
+            type="number"
+            name="amountRaised"
+            id="amountRaised"
+            onChange={handleChange}
+        />
+        {/* <div className="two-fields">
+          <label htmlFor="yearStarted">Started <sup>*</sup> (year): </label>
+          <label htmlFor="amountRaised">Amount Raised: <sup>*</sup> ($)</label>
         </div>
         <div className="two-fields">
           <input
@@ -117,10 +133,10 @@ export const PitchIdeas = () => {
             id="amountRaised"
             onChange={handleChange}
           />
-        </div>
+        </div> */}
 
-        <div className="two-fields">
-          <label htmlFor="salary">Salary ($): </label>
+        {/* <div className="two-fields">
+          <label htmlFor="salary">Salary/Month ($): </label>
           <label htmlFor="equity">Equity ($): </label>
         </div>
         <div className="two-fields">
@@ -128,6 +144,7 @@ export const PitchIdeas = () => {
             type="number"
             name="salary"
             id="salary"
+            placeholder="per month"
             onChange={handleChange}
           />
           <input
@@ -137,16 +154,17 @@ export const PitchIdeas = () => {
             id="equity"
             onChange={handleChange}
           />
-        </div>
-        <label htmlFor="ideas">Job Title: </label>
+        </div> */}
+        <label htmlFor="ideas">Position Title: <sup>*</sup> </label>
         <input
           type="text"
           name="ideas"
           id="ideas"
           required
+          placeholder="CFO/CEO/Marketing Manager..."
           onChange={handleChange}
         />
-        <label htmlFor="jobLocation">Head Quaters: </label>
+        <label htmlFor="jobLocation">Head Quaters: <sup>*</sup> </label>
         <input
           type="text"
           name="jobLocation"

@@ -113,7 +113,6 @@ export const Profile = () => {
           {pitches.map((pitchMap) => (
             <li key={pitchMap._id}>
               <br />
-              <Link to={`/post/${pitchMap._id}`}>
               <div className="pitch-container">
                 <div className="top-part">
                   <div className="logo-company-site">
@@ -123,7 +122,7 @@ export const Profile = () => {
                     <div>
                       <h1>{pitchMap.company}</h1>
                       <Link
-                        to={`https://www.${pitchMap.website}`}
+                        to={`https://${pitchMap.website}`}
                         target="_blank"
                       >
                         {pitchMap.website}
@@ -139,23 +138,21 @@ export const Profile = () => {
                     <div>Year Started: {pitchMap.yearStarted}</div>
                   </div>
                 </div>
-
+                {/* THIS SCSS IS TAKEN FROM PITCHES.SCSS*/}
                 <div className="job-container">
                   <div>
                     <div>
-                      Job Desc: {pitchMap.ideas} . ${pitchMap.salary} .{" "}
-                      {pitchMap.equity}% equity
+                      Position: {pitchMap.ideas} . ${pitchMap.salary} .{" "}
                     </div>
                     <div>
-                      {pitchMap.email} . Remote . {pitchMap.jobLocation}
+                      {pitchMap.email} . HQ - {pitchMap.jobLocation}
                     </div>
                   </div>
-                  {/* <a href={`mailto:${pitchMap.email}`}>
-                    <button>Apply</button>
-                  </a> */}
+                  <Link to={`/post/${pitchMap._id}`}>
+                    <button className="learn-more">More...</button>
+                  </Link>
                 </div>
               </div>
-              </Link>
               <br />
             </li>
           ))}

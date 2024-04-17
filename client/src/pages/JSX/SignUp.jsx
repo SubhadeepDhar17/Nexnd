@@ -47,6 +47,7 @@ export const SignUp = () => {
           id="email"
           value={email}
           required
+          placeholder="email CANNOT be changed later"
           onChange={(event) => setEmail(event.target.value)}
         />
         <label htmlFor="password"> Password: </label>
