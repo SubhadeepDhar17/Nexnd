@@ -61,7 +61,7 @@ router.get("/pitchesOwner/:id", auth, async (req, res) => {
 
   try {
     const pitch = await StartUpModel.findOne({ _id, owner: req.user._id });
-    console.log(pitch);
+    // console.log(pitch);
     if (!pitch) {
       return res.status(404).json();
     }
@@ -88,11 +88,11 @@ router.patch("/pitches/:id", auth, async (req, res) => {
     "amountRaised",
     "ideas",
   ];
-  console.log(allowedUpdates);
+  // console.log(allowedUpdates);
   const isValidOperation = updates.every((update) => {
     return allowedUpdates.includes(update);
   });
-  console.log(isValidOperation);
+  // console.log(isValidOperation);
   if (!isValidOperation) {
     return res.status(404).json({ error: "Invalid update" });
   }
@@ -101,7 +101,7 @@ router.patch("/pitches/:id", auth, async (req, res) => {
       _id: req.params.id,
       owner: req.user._id,
     });
-    console.log(pitch);
+    // console.log(pitch);
     if (!pitch) {
       return res.status(404).json();
     }

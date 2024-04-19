@@ -21,15 +21,18 @@ export const Home = () => {
         </div>
         <div className="scroll-container">
           <div className="cards">
+            <h1>MOBILE APP ON THE WAY</h1>
+            <div className="announcement-desc">Very soon we will be launching the app version of NEXND. Your talent hunting
+              and networking should never be hampered. Keep building, keep grinding.
+            </div>
+          </div>
+          <p className="cards">
             <h1>This is a demo card</h1>
             <p>These are some random demo texts</p>
-          </div>
-          <div className="cards">
-            <h1>This is a demo card</h1>
-            <p>These are some random demo texts</p>
-          </div>
+          </p>
         </div>
-        <div className="scroll-container">
+        {/* IF YOU HAVE ANY MORE CARDS TO ADD THEN UNCOMMENT THE LOWER COMMENTED PART */}
+        {/* <div className="scroll-container">
           <div className="cards">
             <h1>This is a demo card</h1>
             <p>These are some random demo texts</p>
@@ -38,7 +41,7 @@ export const Home = () => {
             <h1>This is a demo card</h1>
             <p>These are some random demo texts</p>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="lower-container">
         <h1>This is the low basin</h1>

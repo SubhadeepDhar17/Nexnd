@@ -4,7 +4,7 @@ import { UserModel } from "../models/users.js";
 const auth = async (req, res, next) => {
   try {
     const token = req.header("Authorization").replace("Bearer ", "");
-    console.log(token)
+    // console.log(token)
     const decoded = jwt.verify(token, "thisisasecretthing");
     const user = await UserModel.findOne({
       _id: decoded._id,

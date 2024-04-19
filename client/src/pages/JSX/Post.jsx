@@ -42,7 +42,7 @@ export const Post = () => {
     } catch (e) {}
   };
 
-  console.log(post);
+  // console.log(post);
 
   return (
   <div>
